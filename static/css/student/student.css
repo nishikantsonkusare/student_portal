@@ -1,0 +1,113 @@
+.notification {
+  width: 100%;
+  padding: 3rem 4rem 3rem 4rem;
+}
+
+.notification .title {
+  width: 100%;
+  line-height: 4rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: center;
+  background: rgba(128, 128, 128, 0.7);
+  color: white;
+  border: 1px solid rgba(0, 0, 0, 0.7);
+  border-radius: 5px 5px 0 0;
+  -webkit-box-shadow: 0 0 10px rgba(128, 128, 128, 0.7);
+          box-shadow: 0 0 10px rgba(128, 128, 128, 0.7);
+}
+
+.notification table {
+  width: 100%;
+  border-collapse: collapse;
+  -webkit-box-shadow: 0 0 10px rgba(128, 128, 128, 0.7);
+          box-shadow: 0 0 10px rgba(128, 128, 128, 0.7);
+}
+
+.notification table thead {
+  display: none;
+}
+
+.notification table tbody tr td {
+  font-size: 1.5rem;
+  padding: 2rem;
+  border: 1px solid rgba(128, 128, 128, 0.4);
+}
+
+.notification table tbody tr td span {
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.notification table tbody tr td span::before {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-right: 1rem;
+  content: '\00BB';
+}
+
+.notification table tbody tr td .show_note {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  display: none;
+}
+
+.notification table tbody tr td .show_note .show_content {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 50%;
+  background: white;
+}
+
+.notification table tbody tr td .show_note .show_content .des_title {
+  width: 100%;
+  line-height: 2.5rem;
+  padding: 1rem 3rem 1rem 3rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.4);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.notification table tbody tr td .show_note .show_content .des_title i {
+  cursor: pointer;
+}
+
+.notification table tbody tr td .show_note .show_content .show_main_content {
+  font-size: 1.5rem;
+  padding: 2rem 3rem 2rem 3rem;
+}
+
+.notification table tbody tr td .show_note .show_content .show_main_content::first-letter {
+  text-transform: uppercase;
+}
+
+.profile_info form table {
+  padding-left: 1rem;
+}
+
+.profile_info form table thead {
+  display: none;
+}
+
+.profile_info form table tbody td {
+  font-size: 1.6rem;
+  font-weight: 600;
+  padding: 1rem;
+}
+/*# sourceMappingURL=student.css.map */

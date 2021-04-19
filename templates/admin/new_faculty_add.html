@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Faculty</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/admin/admin.css') }}">
+</head>
+<body>
+    
+    <div class="addfaculty">
+        <div class="title">
+            Add New Faculty
+        </div>
+        <form action="/addfaculty" method="post" onsubmit="return validationForm()">
+            <div class="form-control">
+                <label for="name">Full Name</label>
+                <input type="text" name="name" id="name" placeholder="Enter Full Name" autocomplete="off" required>
+            </div>
+            <div class="form-control">
+                <label for="mob">Mobile No.</label>
+                <input type="text" name="mob" id="mob" placeholder="Enter Mobile Number" autocomplete="off" required>
+                <div class="msg_alert" id='mob_error' style="margin-top: 0.5rem;"></div>
+            </div>
+            <div class="form-control">
+                <label for="email">Email Address</label>
+                <input type="email" name="email" id="email" placeholder="Enter Faculty Email" autocomplete="off" required>
+            </div>
+            <div class="form-control">
+                <label for="pass">Password</label>
+                <input type="password" name="pass" id="pass" placeholder="Enter Password" autocomplete="off" required>
+            </div>
+            <div class="form-control">
+                <label>User Type: </label>
+                <input type="radio" name="type" id="admin" value="admin" required>
+                <label for="admin">Admin</label>
+                <input type="radio" name="type" id="faculty" value="faculty" required>
+                <label for="faculty">Faculty</label>
+            </div>
+            <button type="submit">Add Faculty</button>
+        </form>
+    </div>
+
+    <script>
+        console.log('Hello')
+        function validationForm(){
+            var mob = document.getElementById('mob');
+            var testmob = /^\d{10}$/;
+            if (!mob.value.match(testmob)){
+                document.getElementById('mob_error').innerHTML = "Please entered valid mobile number."
+                return false;
+            }
+            return true;
+        }
+    </script>
+
+</body>
+</html>

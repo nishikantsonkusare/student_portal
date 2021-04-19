@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background-image: url('/static/img/bg.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+main{
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .student_portal{
+        margin-top: 3rem;
+
+        a{
+            text-decoration: none;
+            padding: 1.2rem 0.8rem 0.8rem 0.8rem;
+            background: white;
+            border: 1px solid rgba($color: black, $alpha: 0.3);
+            border-radius: 10px;
+
+            span{
+                font-size: 1.8rem;
+                font-weight: 600;
+            }
+            i{
+                font-size: 1.6rem;
+                font-weight: 600;
+            }
+        }
+    }
+
+    .form_div{
+        width: 30vw;
+        background: white;
+        border-radius: 2px;
+        box-shadow: 0 0 20px rgba($color: black, $alpha: 0.9);
+
+        .title{
+            width: 100%;
+            line-height: 5rem;
+            font-size: 2rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            text-align: center;
+            border-bottom: 1px solid rgba($color: grey, $alpha: 0.8);
+        }
+
+        form{
+            width: 100%;
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            
+            .form-group{
+                width: 100%;
+                margin: 1rem 0 1rem 0;
+
+                input[type='text']{
+                    width: 95%;
+                    height: 4rem;
+                    padding: 0.5rem 1rem 0.5rem 4rem;
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    border: 2px solid rgba($color: black, $alpha: 0.4);
+                    box-shadow: 0 0 5px rgba($color: black, $alpha: 0.4);
+                    border-radius: 2rem;
+                    outline: none;
+
+                    &:focus{
+                        border: 2px solid rgba($color: green, $alpha: 0.8);
+                    }
+                }
+
+                input[type='password']{
+                    width: 95%;
+                    height: 4rem;
+                    padding: 0.5rem 1rem 0.5rem 4rem;
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    border: 2px solid rgba($color: black, $alpha: 0.4);
+                    box-shadow: 0 0 5px rgba($color: black, $alpha: 0.4);
+                    border-radius: 2rem;
+                    outline: none;
+
+                    &:focus{
+                        border: 2px solid rgba($color: green, $alpha: 0.8);
+                    }
+                }
+    
+                i{
+                    margin: 0;
+                    padding: 0;
+                    color: rgba($color: black, $alpha: 0.7);
+                    font-size: 2rem;
+                    position: relative;
+                    left: 3rem;
+                }
+            }
+
+            button{
+                width: 50%;
+                line-height: 3rem;
+                margin: 1rem;
+                font-size: 1.8rem;
+                font-weight: 600;
+                border: 2px solid rgba($color: green, $alpha: 0.1);
+                background: rgba($color: green, $alpha: 0.8);
+                color: white;
+                border-radius: 1px;
+                outline: none;
+                cursor: pointer;
+
+                &:hover{
+
+                    border: 2px solid rgba($color: green, $alpha: 0.8);
+                    background: white;
+                    color: rgba($color: green, $alpha: 0.8);
+                    box-shadow: 0 0 10px rgba($color: green, $alpha: 0.8);
+
+                }
+            }
+        }
+
+    }
+}
+

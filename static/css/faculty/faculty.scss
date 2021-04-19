@@ -1,0 +1,944 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Varela Round', sans-serif;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    width: auto;
+    min-height: 100vh;
+    overflow-y: auto;
+}
+
+
+input[type="checkbox"]{
+    display: none;
+}
+
+
+#slide:checked ~ .sidebar{
+    margin-left: -20vw;
+    transition: all 0.5s linear;
+}
+
+#slide:checked ~ .main_div{
+    width: 100vw;
+    transition: all 0.5s linear;
+}
+
+input[type='text']{
+    width: 100%;
+    height: 3.5rem;
+    border: 1px solid rgba($color: grey, $alpha: 0.7);
+    border-radius: 4px;
+    outline: none;
+    padding: 0.7rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+input[type='email']{
+    width: 100%;
+    height: 3.5rem;
+    border: 1px solid rgba($color: grey, $alpha: 0.7);
+    border-radius: 4px;
+    outline: none;
+    padding: 0.7rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+input[type="password"]{
+    width: 100%;
+    height: 3.5rem;
+    border: 1px solid rgba($color: grey, $alpha: 0.7);
+    border-radius: 4px;
+    outline: none;
+    padding: 0.7rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+textarea{
+    width: 100%;
+    // height: 3.5rem;
+    border: 1px solid rgba($color: grey, $alpha: 0.7);
+    border-radius: 4px;
+    outline: none;
+    padding: 0.7rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.alert{
+    width: 100%;
+    line-height: 4rem;
+    background: rgba($color: grey, $alpha: 0.7);
+    border: 1px solid rgba($color: black, $alpha: 0.3);
+    border-radius: 3px;
+    box-shadow: 0 0 10px rgba($color: black, $alpha: 0.5);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+
+    .group{
+        display: flex;
+        justify-content: space-between;
+        padding: 0 1.5rem 0 1.5rem;
+
+        i{
+            transform: translateY(30%);
+            cursor: pointer;
+        }
+    }
+}
+
+.msg_alert{
+    margin-left: 2rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: rgba($color: red, $alpha: 0.8);
+}
+
+main{
+
+    display: flex;
+
+// This is code for sidebar
+    .sidebar{
+        width: 20vw;
+        min-height: 100vh;
+        background: #01421C;
+        transition: all 0.5s linear;
+
+        .title{
+            line-height: 4rem;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 600;
+            color: white;
+        }
+        .profile{
+            height: 20vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border-top: 1px solid rgba($color: grey, $alpha: 0.7);
+            border-bottom: 1px solid rgba($color: grey, $alpha: 0.7);
+
+            img{
+                width: 70%;
+                height: 70%;
+                border-radius: 50%;
+            }
+            p{
+                margin-top: 1rem;
+                font-size: 1.8rem;
+                font-weight: 500;
+                text-align: center;
+                color: white;
+                text-transform: uppercase;
+            }
+        }
+
+        ul{
+            list-style: none;
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            color: white;
+
+            li{
+                line-height: 3.5rem;
+                border-bottom: 1px solid rgba($color: grey, $alpha: 0.7);
+                padding-left: 5rem;
+                cursor: pointer;
+
+                a{
+                    width: 100%;
+                    height: 100%;
+                    text-decoration: none;
+                    color: inherit;
+                    outline: none;
+
+                    span{
+                        margin-left: 1rem;
+                    }
+                }
+
+                &:hover{
+                    border-radius: 5px 0 0 5px;
+                    background: white;
+                    color: #01421C;
+                }
+            }
+        }
+    }
+
+    .main_div{
+        width: 80vw;
+        transition: all 0.5s linear;
+
+        .nav{
+            width: 100%;
+            height: 4rem;
+            background: #002B12;
+
+            label{
+                width: 6rem;
+                height: 4rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                i{
+                    font-size: 2.5rem;
+                    color: white;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .main_content{
+
+            .location{
+                width: 100%;
+                line-height: 5rem;
+                font-size: 2rem;
+                padding-left: 4rem;
+                border-bottom: 1px solid rgba($color: grey, $alpha: 0.7);
+                box-shadow: 0 3px 5px rgba($color: grey, $alpha: 0.7);
+
+                span{
+                    margin-left: 1rem;
+                    font-weight: 600;
+                }
+            }
+
+            .note{
+                margin: 5rem 5rem 1rem 5rem;
+
+                .title{
+                    width: 100%;
+                    line-height: 4rem;
+                    background: rgba($color: grey, $alpha: 0.7);
+                    border: 1px solid rgba($color: grey, $alpha: 0.7);
+                    border-radius: 5px 5px 0 0;
+                    font-size: 2rem;
+                    font-weight: 600;
+                    text-align: center;
+                    box-shadow: 0 0 10px rgba($color: grey, $alpha: 0.7);
+                }
+
+                form{
+                    width: 100%;
+                    padding: 1.5rem 3rem 1.5rem 3rem;
+                    border: 1px solid rgba($color: grey, $alpha: 0.7);
+                    border-radius: 0 0 5px 5px;
+                    box-shadow: 0 0 10px rgba($color: grey, $alpha: 0.7);
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    .form-control{
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        padding: 1rem;
+
+                        label{
+                            font-size: 1.7rem;
+                            font-weight: 600;
+                            margin-bottom: 0.5rem;
+                        }
+                    }
+
+                    .select_option{
+                        width: 90%;
+                        margin: 2rem 2rem 0 2rem;
+                        display: flex;
+                        align-items: center;
+                        // justify-content: space-around;
+                
+                        label{
+                            width: 30%;           
+                            font-size: 1.5rem;
+                            font-weight: 600;
+                            padding: 0 5rem 0 2rem;
+                        }
+                        select{
+                            width: 70%;
+                            height: 3rem;
+                            font-size: 1.5rem;
+                            font-weight: 600;
+                            padding: 0 5rem 0 2rem;
+                            border: 1px solid rgba($color: grey, $alpha: 0.4);
+                            cursor: pointer;
+                
+                            option{
+                                font-size: 1.5rem;
+                                font-weight: 600;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+
+                    button{
+                        width: 50%;
+                        height: 4rem;
+                        font-size: 1.7rem;
+                        font-weight: 600;
+                        background: #145A32;
+                        border: 2px solid #145A32;
+                        color: white;
+                        border-radius: 2px;
+                        margin: 2rem 0;
+
+                        &:hover{
+                            background: white;
+                            border: 2px solid #145A32;
+                            color: #145A32;
+                            box-shadow: 0 0 10px rgba($color: grey, $alpha: 0.9);
+                            cursor: pointer;
+
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+}
+
+// This is code for profile webpage
+
+.profile_content{
+    width: 100%;
+    padding: 2rem 5rem 2rem 5rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    // margin: 1rem;
+
+    .profile{
+        width: 30%;
+        flex: 1 1 20rem;
+        display: flex;
+        // justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin: 5rem 1rem 2rem 1rem;
+        
+        
+        img{
+            width: 20vw;
+            height: 20vw;
+            border-radius: 50%;
+        }
+
+        label{
+            width: 15rem;
+            line-height: 3.5rem;
+            color: white;
+            background: #145A32;
+            font-size: 1.5rem;
+            font-weight: 600;
+            text-align: center;
+            border-radius: 4px;
+            margin-top: 1.5rem;
+            cursor: pointer;
+        }
+    }
+    .profile_info{
+        width: 60%;
+        flex: 1 1 40rem;
+
+        .title{
+            width: 100%;
+            line-height: 5rem;
+            font-size: 2rem;
+            font-weight: 600;
+            text-align: center;
+            // color: white;
+            background: rgba($color: grey, $alpha: 0.7);
+            border: 1px solid rgba($color: grey, $alpha: 0.7);
+            border-radius: 5px 5px 0 0;
+            box-shadow: 0 0 10px rgba($color: grey, $alpha: 0.7);
+        }
+
+        form{
+            width: 100%;
+            padding: 2rem;
+            border: 1px solid rgba($color: grey, $alpha: 0.7);
+            border-radius: 0 0 5px 5px;
+            box-shadow: 0 0 10px rgba($color: grey, $alpha: 0.7);
+
+            display: flex;
+            // align-items: center;
+            flex-direction: column;
+
+            input[type="file"]{
+                display: none;
+            }
+
+            button{
+                width: 50%;
+                height: 4rem;
+                font-size: 1.7rem;
+                font-weight: 600;
+                color: white;
+                background: #145A32;
+                border: 2px solid #145A32;
+                margin: 1.5rem 0;
+                border-radius: 2px;
+                box-shadow: 0 0 10px rgba($color: grey, $alpha: 0.7);
+                transform: translateX(50%);
+                cursor: pointer;
+
+                &:hover{
+                    color: #145A32;
+                    border: 2px solid #145A32;
+                    background: white;
+                }
+            }
+
+            p{
+                font-size: 2rem;
+                font-weight: 600;
+                color: #154360;
+                margin: 0.5rem 0 1rem 0;
+            }
+
+            .form-control{
+                width: 100%;
+                padding: 1rem;
+
+                label{
+                    font-size: 1.7rem;
+                    font-weight: 600;
+                    color: rgba($color: black, $alpha: 0.7);
+                }
+            }
+        }
+
+    }
+}
+
+// This is code for booklist.html
+.books{
+    width: auto;
+    padding: 4rem;
+
+    .lft{
+        position: relative;
+        float: right;
+        right: 5%;
+        margin-top: 0rem;
+        a{
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: 600;
+            padding: 1.5rem;
+            border: 1px solid rgba($color: grey, $alpha: 0.8);
+            border-radius: 5px;
+            background: rgba($color: green, $alpha: 0.7);
+            color: white;
+            transition: all 0.2s linear;
+            span{
+                margin-left: 1rem;
+            }
+
+            &:hover{
+                font-size: 1.6rem;
+                background: white;
+                color: rgba($color: green, $alpha: 0.7);
+                border: 2px solid rgba($color: green, $alpha: 0.7);
+                transition: all 0.2s linear;
+            }
+        }
+    }
+    .book_table{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 6rem;
+
+        div.dataTables_wrapper{
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .title{
+            width: 100%;
+            line-height: 4rem;
+            background: rgba($color: grey, $alpha: 0.7);
+            font-size: 1.7rem;
+            font-weight: 600;
+            text-align: center;
+            border: 1px solid rgba($color: black, $alpha: 0.4);
+            border-radius: 5px 5px 0 0;
+            box-shadow: 0 0 10px rgba($color: grey, $alpha: 0.4);
+        }
+        table{
+            width: 100%;
+            border-collapse: collapse;
+            box-shadow: 0 0 10px rgba($color: grey, $alpha: 0.4);
+            
+            thead{
+                background: black;
+                color: white;
+                border: 1px solid white;
+
+                th{
+                    line-height: 3rem;
+                    font-size: 1.7rem;
+                    font-weight: 600;
+                    border: 1px solid white;
+                }
+            }
+
+            td{
+                line-height: 2.5rem;
+                font-size: 1.5rem;
+                font-weight: 600;
+                border: 1px solid rgba($color: black, $alpha: 0.5);
+                padding: 0.5rem;
+                text-align: center;
+
+                a{
+                    text-decoration: none;
+                    color: inherit;
+                    i{
+                        font-size: 2.5rem;
+                        color: rgba($color: red, $alpha: 0.9);
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// This is code for addbook.html
+
+.book_div{
+    width: auto;
+    margin: 3.5rem 2rem 2rem 2rem;
+    display: flex;
+    // justify-content: center;
+
+    .book_upload{
+        width: 100%;
+        display: flex;
+        // justify-items: center;
+        flex-direction: column;
+        align-items: center;
+        .title{
+            width: 80%;
+            line-height: 4rem;
+            background: rgba($color: grey, $alpha: 0.7);
+            font-size: 1.7rem;
+            font-weight: 600;
+            text-align: center;
+            border: 1px solid rgba($color: black, $alpha: 0.4);
+            border-radius: 5px 5px 0 0;
+            box-shadow: 0 0 10px rgba($color: grey, $alpha: 0.4);
+        }
+        form{
+            width: 80%;
+            padding: 2rem;
+            // padding-bottom: 3rem;
+            display: grid;
+            place-items: center;
+            border: 1px solid rgba($color: grey, $alpha: 0.4);
+            border-radius: 0 0 5px 5px;
+            box-shadow: 0 0 10px rgba($color: grey, $alpha: 0.4);
+
+            input[type='text']{
+                margin: 1rem 0 1rem 0;
+            }
+        
+            button{
+                width: 50%;
+                line-height: 4rem;
+                margin: 1rem 2rem 1rem 2rem;
+                border: 1px solid rgba($color: grey, $alpha: 0.4);
+                border-radius: 2px;
+                background: #283747;
+                color:white;
+                font-size: 1.5rem;
+                font-weight: 600;
+                cursor: pointer;
+        
+                &:hover{
+                    background: #17202A;
+                    font-size: 2rem;
+                    box-shadow: 0 0 10px rgba($color: grey, $alpha: 1);
+                }
+            }
+        
+            .select_option{
+                width: 90%;
+                margin: 2rem 2rem 0 2rem;
+                display: flex;
+                align-items: center;
+                // justify-content: space-around;
+        
+                label{
+                    width: 30%;           
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    padding: 0 5rem 0 2rem;
+                }
+                select{
+                    width: 70%;
+                    height: 3rem;
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    padding: 0 5rem 0 2rem;
+                    border: 1px solid rgba($color: grey, $alpha: 0.4);
+                    cursor: pointer;
+        
+                    option{
+                        font-size: 1.5rem;
+                        font-weight: 600;
+                        cursor: pointer;
+                    }
+                }
+            }
+            input[type=file]{
+                // width: 100%;
+                line-height: 3rem;
+                font-size: 1.5rem;
+                font-weight: 600;
+                margin: 2rem 0 1.5rem 0;
+                outline: none;
+            }
+
+            input[type=file]::-webkit-file-upload-button{
+                width: 15rem;
+                height: 3.5rem;
+                font-size: 1.5rem;
+                font-weight: 600;
+                background: #229954;
+                color: white;
+                border: 1px  solid rgba($color: grey, $alpha: 0.8);
+                border-radius: 3px;
+                outline: none;
+                cursor: pointer;
+            
+                &:hover{
+                        background: #196F3D;    
+                        font-size: 1.5rem;
+                        box-shadow: 0 0 10px rgba($color: grey, $alpha: 0.8);
+                }
+            
+            }
+        }
+    }
+
+}
+
+// This is code for students.html
+
+.student_div{
+    padding: 2rem 4rem 2rem 4rem;
+
+    .import_btn{
+        button{
+            line-height: 2rem;
+            text-decoration: none;
+            padding: 1rem;
+            background: rgba($color: green, $alpha: 0.8);
+            border: 2px solid rgba($color: green, $alpha: 0.1);
+            border-radius: 3px;
+            color: white;
+            margin: 2rem 0 0 3rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+            outline: none;
+            cursor: pointer;
+
+            span{
+                margin: 1rem;
+            }
+
+            &:hover{
+                background: white;
+                border: 2px solid rgba($color: green, $alpha: 0.8);
+                border-radius: 3px;
+                color: rgba($color: green, $alpha: 0.8);
+            }
+        }
+
+        a{
+            text-decoration: none;
+            background: rgba($color: green, $alpha: 0.8);
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
+            padding: 1.3rem 1rem 1.3rem 1rem;
+            border-radius: 3px;
+            margin-left: 1rem;
+        }
+    }
+
+    .model1{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        display: none;
+        background-color: rgba($color: #000000, $alpha: 0.4);
+        z-index: 150;
+
+        .model_content1{
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            width: 30%;
+            border: 1px solid rgba($color: grey, $alpha: 0.7);
+            box-shadow: 0 0 10px rgba($color: grey, $alpha: 0.7);
+            border-radius: 3px;
+
+            .title1{
+                width: 100%;
+                height: 4rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-size: 1.8rem;
+                font-weight: 600;
+                padding: 0.5rem 2rem 0.5rem 2rem;
+                border-bottom: 1px solid rgba($color: grey, $alpha: 0.7);
+
+                i{
+                    cursor: pointer;
+                }
+            }
+
+            form{
+
+                .file{
+                    height: 8rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-bottom: 1px solid rgba($color: grey, $alpha: 0.7);
+
+                    input[type=file]{
+                        width: 55%;
+                        line-height: 3rem;
+                        font-size: 1.5rem;
+                        font-weight: 600;
+                        margin: 2rem 0 1.5rem 0;
+                        outline: none;
+                    }
+        
+                    input[type=file]::-webkit-file-upload-button{
+                        width: 10rem;
+                        height: 3rem;
+                        font-size: 1.5rem;
+                        font-weight: 600;
+                        background: #229954;
+                        color: white;
+                        border: 1px  solid rgba($color: grey, $alpha: 0.8);
+                        border-radius: 3px;
+                        outline: none;
+                        cursor: pointer;
+                    
+                        &:hover{
+                                background: #196F3D;    
+                                font-size: 1.5rem;
+                                box-shadow: 0 0 10px rgba($color: grey, $alpha: 0.8);
+                        }
+                    
+                    }
+                }
+
+                .group{
+                    float: right;
+                    line-height: 4rem;
+                    padding: 0.5rem 1rem 0.5rem 0;
+
+                    button{
+                        width: 10rem;
+                        line-height: 3rem;
+                        font-size: 1.5rem;
+                        font-weight: 600;
+                        background: rgba($color: green, $alpha: 0.7);
+                        color: white;
+                        border: none;
+                        outline: none;
+                        cursor: pointer;
+
+                        &:hover{
+                            background: rgba($color: green, $alpha: 1.0);
+                            box-shadow: 0 0 10px rgba($color: grey, $alpha: 0.7);
+                        }
+                    }
+
+                    label{
+                        background: #5F6A6A;
+                        color: white;
+                        font-size: 1.5rem;
+                        font-weight: 600;
+                        padding: 0.6rem 2.5rem 0.6rem 2.5rem;
+                        margin:0 1rem;
+                        cursor: pointer;
+
+                        &:hover{
+                            background: #4D5656;
+                            box-shadow: 0 0 10px rgba($color: grey, $alpha: 0.7);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .title{
+        width: 100%;
+        line-height: 4rem;
+        margin-top: 3rem;
+        font-size: 2rem;
+        font-weight: 600;
+        text-align: center;
+        background: rgba($color: grey, $alpha: 0.7);
+        color: white;
+        border: 1px solid rgba($color: green, $alpha: 0.8);
+        border-radius: 5px 5px 0 0;
+        box-shadow: 0 0 10px rgba($color: grey, $alpha: 0.7);
+    }
+
+    table{
+        width: 100%;
+        border-collapse: collapse;
+
+        thead{
+            background: black;
+            color: white;
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+        
+        td{
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 500;
+            padding: 0.5rem;
+            // border: 1px solid rgba($color: grey, $alpha: 0.7);
+
+            a{
+                text-decoration: none;
+                font-size: 1.8rem;
+                font-weight: 600;
+                color: rgba($color: red, $alpha: 0.8);
+            }
+        }
+    }
+
+}
+
+// This is code for notification.html
+.notification_div{
+    padding: 4rem 4rem 2rem 4rem;
+
+    .title{
+        width: 100%;
+        line-height: 4rem;
+        font-size: 2rem;
+        font-weight: 600;
+        text-align: center;
+        background: rgba($color: grey, $alpha: 0.5);
+        border: 1px solid rgba($color: grey, $alpha: 0.8);
+        border-radius: 5px 5px 0 0;
+        box-shadow: 0 0 10px rgba($color: grey, $alpha: 0.7);
+    }
+
+    table{
+        width: 100%;
+        border-collapse: collapse;
+
+        thead{
+            line-height: 3rem;
+            background: black;
+            color: white;
+            font-size: 1.8rem;
+            font-weight: 600;
+            // border: none;
+        }
+        td{
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 500;
+            padding: 0.5rem;
+
+            .model{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                z-index: 1;
+                background: rgba($color: black, $alpha: 0.3);
+                display: none;
+
+                .model_content{
+                    margin: 0 10rem 0 10rem;
+                    padding-bottom: 1rem;
+                    background: white;
+                    
+                    .notification_title{
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        width: 100%;
+                        font-size: 1.8rem;
+                        font-weight: 600;
+                        line-height: 3rem;
+                        padding: 0 2rem;
+                        border-bottom: 1px solid rgba($color: grey, $alpha: 0.5);
+
+                        i{
+                            cursor: pointer;
+                        }
+                    }
+
+                    .group{
+                        // width: 100%;
+                        padding: 0.5rem 3rem;
+                        display: flex;
+                        flex-direction: row;
+                        // justify-content: space-between;
+                        span{
+                            font-weight: 600;
+                            // width: 10%;
+                            padding-right: 1rem;
+
+                            &::first-letter{
+                                text-transform: uppercase;
+                            }
+                        }
+                        p::first-letter{
+                            text-transform: uppercase;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}

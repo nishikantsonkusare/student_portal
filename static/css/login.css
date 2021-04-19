@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("/static/img/bg.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+main {
+  width: 100vw;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .student_portal {
+  margin-top: 3rem;
+}
+
+main .student_portal a {
+  text-decoration: none;
+  padding: 1.2rem 0.8rem 0.8rem 0.8rem;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+main .student_portal a span {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+main .student_portal a i {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+main .form_div {
+  width: 30vw;
+  background: white;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
+}
+
+main .form_div .title {
+  width: 100%;
+  line-height: 5rem;
+  font-size: 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.8);
+}
+
+main .form_div form {
+  width: 100%;
+  padding: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main .form_div form .form-group {
+  width: 100%;
+  margin: 1rem 0 1rem 0;
+}
+
+main .form_div form .form-group input[type='text'] {
+  width: 95%;
+  height: 4rem;
+  padding: 0.5rem 1rem 0.5rem 4rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border: 2px solid rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  border-radius: 2rem;
+  outline: none;
+}
+
+main .form_div form .form-group input[type='text']:focus {
+  border: 2px solid rgba(0, 128, 0, 0.8);
+}
+
+main .form_div form .form-group input[type='password'] {
+  width: 95%;
+  height: 4rem;
+  padding: 0.5rem 1rem 0.5rem 4rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border: 2px solid rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  border-radius: 2rem;
+  outline: none;
+}
+
+main .form_div form .form-group input[type='password']:focus {
+  border: 2px solid rgba(0, 128, 0, 0.8);
+}
+
+main .form_div form .form-group i {
+  margin: 0;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 2rem;
+  position: relative;
+  left: 3rem;
+}
+
+main .form_div form button {
+  width: 50%;
+  line-height: 3rem;
+  margin: 1rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  border: 2px solid rgba(0, 128, 0, 0.1);
+  background: rgba(0, 128, 0, 0.8);
+  color: white;
+  border-radius: 1px;
+  outline: none;
+  cursor: pointer;
+}
+
+main .form_div form button:hover {
+  border: 2px solid rgba(0, 128, 0, 0.8);
+  background: white;
+  color: rgba(0, 128, 0, 0.8);
+  -webkit-box-shadow: 0 0 10px rgba(0, 128, 0, 0.8);
+          box-shadow: 0 0 10px rgba(0, 128, 0, 0.8);
+}
+/*# sourceMappingURL=login.css.map */

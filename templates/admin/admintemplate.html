@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {% block title %} {% endblock %} </title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <link rel="stylesheet" href=" {{ url_for('static', filename = 'css/admin/admin.css') }} ">
+    {% block tags %}{%endblock%}
+</head>
+<body>
+
+    
+    <main>
+        <input type="checkbox" name="slide" id="slide">
+        <div class="sidebar">
+            <div class="title">
+                Admin Portal
+            </div>
+            <div class="profile">
+                    <!-- {% block profile %} {%endblock%} -->
+                    <img src="static/img/{{session['img']}}" alt="Profile image">
+                    <p>{{session['name']}}</p>
+            </div>
+            <ul>
+                <li><a href="/dashboard"><i class="fas fa-home"></i><span>Dashboard</span></a></li>
+                <li><a href="/profile"><i class="far fa-user-circle"></i><span>Profile</span></a></li>
+                <li><a href="/faculty"><i class="fas fa-user-tie"></i><span>Faculty</span></a></li>
+                <li><a href="/student"><i class="fas fa-user-graduate"></i><span>Students</span></a></li>
+                <li><a href="/notification"><i class="fas fa-bell"></i><span>Notification</span></a></li>
+                <li><a href="/books"><i class="fas fa-book"></i><span>Books</span></a></li>
+                <li><a href="/logout"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a></li>
+            </ul>
+        </div>
+
+        <div class="main_div">
+
+            <!-- This is navigation bar code -->
+            <div class="nav">
+                <label for="slide"><i class="fas fa-bars"></i></label>
+            </div>
+
+            {% block content %}
+
+            {% endblock %}
+
+        </div>
+
+    </main>
+    
+</body>
+</html>

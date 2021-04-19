@@ -1,0 +1,78 @@
+{% extends "admin/admintemplate.html" %}
+
+{% block title %} Profile {% endblock %}
+
+{% block tags %}
+<script src="/static/js/profile.js"></script>
+{%endblock%}
+
+{% block content %}
+
+<div class="main_content">
+    <div class="location">
+        <i class="far fa-user-circle"></i><span>Profile</span>
+    </div>
+
+    <div class="profile_content">
+        {% with message = get_flashed_messages() %}
+            {% if message %}
+                {% for msg in message %}
+                    <div class="alert">
+                        <div class="group">
+                            <p>
+                                {{msg}}
+                            </p>
+                            <i class="fas fa-times" onclick="this.parentNode.parentNode.remove()"></i>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <div class="profile">
+            <img src="static/img/{{session['img']}}" alt="Profile image">
+            <label for="img">Upload Image</label>
+            <div class="msg_alert" id='img_error' style="margin-top: 1rem;"></div>
+        </div>
+        <div class="profile_info">
+            <div class="title">
+                <p>Porfile Information</p>
+            </div>
+            <form action='/profile' method="POST" enctype="multipart/form-data" onsubmit="return validationForm()">
+                <p>Account Information</p>
+                <div class="form-control">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" placeholder="Enter Your Name" value="{{data[0][0]}}" autocomplete="off" required> 
+                </div>
+                <div class="form-control">
+                    <label for="mob">Mobile No.</label>
+                    <input type="text" name="mob" id="mob" placeholder="Enter Mobile No." value="{{data[0][1]}}" autocomplete="off" required>
+                </div>
+                <div class="msg_alert" id='mob_error'></div>
+                <div class="form-control">
+                    <label for="email">Email Address</label>
+                    <input type="email" name="email" id="email" placeholder="Enter Email Address" value="{{data[0][2]}}" autocomplete="off" required>
+                </div>
+                <p>Password Change</p>
+                <div class="form-control">
+                    <label for="cpass">Current Password</label>
+                    <input type="password" name="cpass" id="cpass" placeholder="Enter Current Password">
+                </div>
+                <div class="form-control">
+                    <label for="npass">New Password</label>
+                    <input type="password" name="npass" id="npass" placeholder="Enter New Password">
+                </div>
+                <div class="msg_alert" id='npass_error'></div>
+                <div class="form-control">
+                    <label for="cnfpass">Confirm Password</label>
+                    <input type="password" name="cnfpass" id="cnfpass" placeholder="Enter Confirm Password">
+                </div>
+                <div class="msg_alert" id='cnf_error'></div>
+                <input type="file" name="img" id="img">
+                <button type="submit">Update Information</button>
+            </form>
+
+        </div>
+    </div>
+
+
+{% endblock %}

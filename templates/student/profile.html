@@ -1,0 +1,117 @@
+{% extends "student/studenttemplate.html" %}
+
+{% block title %} Profile {% endblock %}
+
+{% block tags %}
+<script src="/static/js/profile.js"></script>
+{%endblock%}
+
+{% block content %}
+
+<div class="main_content">
+    <div class="location">
+        <i class="far fa-user-circle"></i><span>Profile</span>
+    </div>
+
+    <div class="profile_content">
+        {% with message = get_flashed_messages() %}
+            {% if message %}
+                {% for msg in message %}
+                    <div class="alert">
+                        <div class="group">
+                            <p>
+                                {{msg}}
+                            </p>
+                            <i class="fas fa-times" onclick="this.parentNode.parentNode.remove()"></i>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <div class="profile">
+            <img src="static/img/{{session['img']}}" alt="Profile image">
+            <label for="img">Upload Image</label>
+            <div class="msg_alert" id='img_error' style="margin-top: 1rem;"></div>
+        </div>
+        <div class="profile_info">
+            <div class="title">
+                <p>Porfile Information</p>
+            </div>
+            <form action='/student_profile' method="POST" enctype="multipart/form-data" onsubmit="return validationForm()">
+                <p>Account Information</p>
+                <div class="form-control">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" placeholder="Enter Your Name" value="{{data[0][0]}}" autocomplete="off" required> 
+                </div>
+                <div class="form-control">
+                    <label for="mob">Mobile No.</label>
+                    <input type="text" name="mob" id="mob" placeholder="Enter Mobile No." value="{{data[0][1]}}" autocomplete="off" required>
+                </div>
+                <div class="msg_alert" id='mob_error'></div>
+                <!-- <div class="form-control">
+                    <label for="roll" style="width: 20rem;">Roll No.</label>
+                    <Label>{{data[0][2]}}</Label>
+                </div>
+                <div class="form-control">
+                    <label for="branch">Branch</label>
+                    <input type="text" name="branch" id="branch" value="{{data[0][3]}}" autocomplete="off">
+                </div>
+                <div class="form-control">
+                    <label for="year">Year</label>
+                    <input type="text" name="year" id="year" value="{{data[0][4]}}" autocomplete="off">
+                </div>
+                <div class="form-control">
+                    <label for="section">Section</label>
+                    <input type="text" name="section" id="section" value="{{data[0][5]}}" autocomplete="off">
+                </div> -->
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Roll No.</td>
+                            <td>:-  {{data[0][2]}}</td>
+                        </tr>
+                        <tr>
+                            <td>Branch</td>
+                            <td>:-  {{data[0][3]}}</td>
+                        </tr>
+                        <tr>
+                            <td>Year</td>
+                            <td>:-  {{data[0][4]}}</td>
+                        </tr>
+                        <tr>
+                            <td>Section</td>
+                            <td>:-  {{data[0][5]}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Password Change</p>
+                <div class="form-control">
+                    <label for="cpass">Current Password</label>
+                    <input type="password" name="cpass" id="cpass" placeholder="Enter Current Password">
+                </div>
+                <div class="form-control">
+                    <label for="npass">New Password</label>
+                    <input type="password" name="npass" id="npass" placeholder="Enter New Password">
+                </div>
+                <div class="msg_alert" id='npass_error'></div>
+                <div class="form-control">
+                    <label for="cnfpass">Confirm Password</label>
+                    <input type="password" name="cnfpass" id="cnfpass" placeholder="Enter Confirm Password">
+                </div>
+                <div class="msg_alert" id='cnf_error'></div>
+                <input type="file" name="img" id="img">
+                <button type="submit">Update Information</button>
+            </form>
+
+        </div>
+    </div>
+
+
+{% endblock %}

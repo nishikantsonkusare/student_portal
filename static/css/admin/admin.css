@@ -1,0 +1,1268 @@
+@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Varela Round', sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  width: auto;
+  min-height: 100vh;
+  overflow-y: auto;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+#slide:checked ~ .sidebar {
+  margin-left: -20vw;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+
+#slide:checked ~ .main_div {
+  width: 100vw;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+
+input[type='text'] {
+  width: 100%;
+  height: 3.5rem;
+  border: 1px solid rgba(128, 128, 128, 0.7);
+  border-radius: 4px;
+  outline: none;
+  padding: 0.7rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+input[type='email'] {
+  width: 100%;
+  height: 3.5rem;
+  border: 1px solid rgba(128, 128, 128, 0.7);
+  border-radius: 4px;
+  outline: none;
+  padding: 0.7rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+input[type="password"] {
+  width: 100%;
+  height: 3.5rem;
+  border: 1px solid rgba(128, 128, 128, 0.7);
+  border-radius: 4px;
+  outline: none;
+  padding: 0.7rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+textarea {
+  width: 100%;
+  border: 1px solid rgba(128, 128, 128, 0.7);
+  border-radius: 4px;
+  outline: none;
+  padding: 0.7rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.alert {
+  width: 100%;
+  line-height: 4rem;
+  background: rgba(128, 128, 128, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.alert .group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 1.5rem 0 1.5rem;
+}
+
+.alert .group i {
+  -webkit-transform: translateY(30%);
+          transform: translateY(30%);
+  cursor: pointer;
+}
+
+.msg_alert {
+  margin-left: 2rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: rgba(255, 0, 0, 0.8);
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+main .sidebar {
+  width: 20vw;
+  min-height: 100vh;
+  background: #01421C;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+
+main .sidebar .title {
+  line-height: 4rem;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  color: white;
+}
+
+main .sidebar .profile {
+  height: 20vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-top: 1px solid rgba(128, 128, 128, 0.7);
+  border-bottom: 1px solid rgba(128, 128, 128, 0.7);
+}
+
+main .sidebar .profile img {
+  width: 70%;
+  height: 70%;
+  border-radius: 50%;
+}
+
+main .sidebar .profile p {
+  margin-top: 1rem;
+  font-size: 1.8rem;
+  font-weight: 500;
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+}
+
+main .sidebar ul {
+  list-style: none;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  color: white;
+}
+
+main .sidebar ul li {
+  line-height: 3.5rem;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.7);
+  padding-left: 5rem;
+  cursor: pointer;
+}
+
+main .sidebar ul li a {
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+}
+
+main .sidebar ul li a span {
+  margin-left: 1rem;
+}
+
+main .sidebar ul li:hover {
+  border-radius: 5px 0 0 5px;
+  background: white;
+  color: #01421C;
+}
+
+main .main_div {
+  width: 80vw;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+
+main .main_div .nav {
+  width: 100%;
+  height: 4rem;
+  background: #002B12;
+}
+
+main .main_div .nav label {
+  width: 6rem;
+  height: 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .main_div .nav label i {
+  font-size: 2.5rem;
+  color: white;
+  cursor: pointer;
+}
+
+main .main_div .main_content .location {
+  width: 100%;
+  line-height: 5rem;
+  font-size: 2rem;
+  padding-left: 4rem;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.7);
+  -webkit-box-shadow: 0 3px 5px rgba(128, 128, 128, 0.7);
+          box-shadow: 0 3px 5px rgba(128, 128, 128, 0.7);
+}
+
+main .main_div .main_content .location span {
+  margin-left: 1rem;
+  font-weight: 600;
+}
+
+main .main_div .main_content .flex_box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 3rem;
+}
+
+main .main_div .main_content .flex_box .flex_boxes {
+  height: 15rem;
+  border: 1px solid rgba(128, 128, 128, 0.7);
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 20rem;
+          flex: 1 1 20rem;
+  margin: 2rem;
+  padding: 1rem;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 10px rgba(128, 128, 128, 0.7);
+          box-shadow: 0 0 10px rgba(128, 128, 128, 0.7);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .main_div .main_content .flex_box .flex_boxes .text {
+  margin-left: 1.5rem;
+}
+
+main .main_div .main_content .flex_box .flex_boxes .text h1 {
+  font-size: 6rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+main .main_div .main_content .flex_box .flex_boxes .text p {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+main .main_div .main_content .flex_box .flex_boxes .fas_icon {
+  width: 25%;
+  font-size: 6rem;
+}
+
+main .main_div .main_content .flex_box .flex_boxes:nth-child(1) {
+  background: #48C9B0;
+}
+
+main .main_div .main_content .flex_box .flex_boxes:nth-child(2) {
+  background: #27AE60;
+}
+
+main .main_div .main_content .flex_box .flex_boxes:nth-child(3) {
+  background: #2ECC71;
+}
+
+main .main_div .main_content .note {
+  margin: 1rem 5rem 1rem 5rem;
+}
+
+main .main_div .main_content .note .title {
+  width: 100%;
+  line-height: 4rem;
+  background: rgba(128, 128, 128, 0.7);
+  border: 1px solid rgba(128, 128, 128, 0.7);
+  border-radius: 5px 5px 0 0;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  -webkit-box-shadow: 0 0 10px rgba(128, 128, 128, 0.7);
+          box-shadow: 0 0 10px rgba(128, 128, 128, 0.7);
+}
+
+main .main_div .main_content .note form {
+  width: 100%;
+  padding: 1.5rem 3rem 1.5rem 3rem;
+  border: 1px solid rgba(128, 128, 128, 0.7);
+  border-radius: 0 0 5px 5px;
+  -webkit-box-shadow: 0 0 10px rgba(128, 128, 128, 0.7);
+          box-shadow: 0 0 10px rgba(128, 128, 128, 0.7);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .main_div .main_content .note form .form-control {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 1rem;
+}
+
+main .main_div .main_content .note form .form-control label {
+  font-size: 1.7rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+main .main_div .main_content .note form .select_option {
+  width: 90%;
+  margin: 2rem 2rem 0 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .main_div .main_content .note form .select_option label {
+  width: 30%;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 0 5rem 0 2rem;
+}
+
+main .main_div .main_content .note form .select_option select {
+  width: 70%;
+  height: 3rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 0 5rem 0 2rem;
+  border: 1px solid rgba(128, 128, 128, 0.4);
+  cursor: pointer;
+}
+
+main .main_div .main_content .note form .select_option select option {
+  font-size: 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+main .main_div .main_content .note form button {
+  width: 50%;
+  height: 4rem;
+  font-size: 1.7rem;
+  font-weight: 600;
+  background: #145A32;
+  border: 2px solid #145A32;
+  color: white;
+  border-radius: 2px;
+  margin: 2rem 0;
+}
+
+main .main_div .main_content .note form button:hover {
+  background: white;
+  border: 2px solid #145A32;
+  color: #145A32;
+  -webkit-box-shadow: 0 0 10px rgba(128, 128, 128, 0.9);
+          box-shadow: 0 0 10px rgba(128, 128, 128, 0.9);
+  cursor: pointer;
+}
+
+.profile_content {
+  width: 100%;
+  padding: 2rem 5rem 2rem 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.profile_content .profile {
+  width: 30%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 20rem;
+          flex: 1 1 20rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 5rem 1rem 2rem 1rem;
+}
+
+.profile_content .profile img {
+  width: 20vw;
+  height: 20vw;
+  border-radius: 50%;
+}
+
+.profile_content .profile label {
+  width: 15rem;
+  line-height: 3.5rem;
+  color: white;
+  background: #145A32;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 4px;
+  margin-top: 1.5rem;
+  cursor: pointer;
+}
+
+.profile_content .profile_info {
+  width: 60%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 40rem;
+          flex: 1 1 40rem;
+}
+
+.profile_content .profile_info .title {
+  width: 100%;
+  line-height: 5rem;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  background: rgba(128, 128, 128, 0.7);
+  border: 1px solid rgba(128, 128, 128, 0.7);
+  border-radius: 5px 5px 0 0;
+  -webkit-box-shadow: 0 0 10px rgba(128, 128, 128, 0.7);
+          box-shadow: 0 0 10px rgba(128, 128, 128, 0.7);
+}
+
+.profile_content .profile_info form {
+  width: 100%;
+  padding: 2rem;
+  border: 1px solid rgba(128, 128, 128, 0.7);
+  border-radius: 0 0 5px 5px;
+  -webkit-box-shadow: 0 0 10px rgba(128, 128, 128, 0.7);
+          box-shadow: 0 0 10px rgba(128, 128, 128, 0.7);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.profile_content .profile_info form input[type="file"] {
+  display: none;
+}
+
+.profile_content .profile_info form button {
+  width: 50%;
+  height: 4rem;
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: white;
+  background: #145A32;
+  border: 2px solid #145A32;
+  margin: 1.5rem 0;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 0 10px rgba(128, 128, 128, 0.7);
+          box-shadow: 0 0 10px rgba(128, 128, 128, 0.7);
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+  cursor: pointer;
+}
+
+.profile_content .profile_info form button:hover {
+  color: #145A32;
+  border: 2px solid #145A32;
+  background: white;
+}
+
+.profile_content .profile_info form p {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #154360;
+  margin: 0.5rem 0 1rem 0;
+}
+
+.profile_content .profile_info form .form-control {
+  width: 100%;
+  padding: 1rem;
+}
+
+.profile_content .profile_info form .form-control label {
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.faculty_info {
+  width: 100%;
+  padding: 3rem;
+}
+
+.faculty_info .add_faculty a {
+  text-decoration: none;
+  color: white;
+  background: #145A32;
+  padding: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border-radius: 3px;
+  float: right;
+}
+
+.faculty_info .title {
+  width: 100%;
+  line-height: 4rem;
+  font-size: 1.9rem;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 6rem;
+  background: rgba(128, 128, 128, 0.7);
+  border: 1px solid rgba(128, 128, 128, 0.7);
+  -webkit-box-shadow: 0 0 10px rgba(128, 128, 128, 0.7);
+          box-shadow: 0 0 10px rgba(128, 128, 128, 0.7);
+  border-radius: 5px 5px 0 0;
+}
+
+.faculty_info table {
+  width: 100%;
+  border: 1px solid rgba(128, 128, 128, 0.7);
+  -webkit-box-shadow: 0 0 10px rgba(128, 128, 128, 0.7);
+          box-shadow: 0 0 10px rgba(128, 128, 128, 0.7);
+  border-radius: 0 0 5px 5px;
+}
+
+.faculty_info table th {
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+.faculty_info table td {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  line-height: 3rem;
+}
+
+.faculty_info table td a:nth-child(1) {
+  text-decoration: none;
+  color: white;
+  background: #F1C40F;
+  padding: 1rem;
+  margin-right: 0.5rem;
+  border-radius: 3px;
+}
+
+.faculty_info table td a:nth-child(1) span {
+  padding: 0.5rem;
+}
+
+.faculty_info table td a:nth-child(2) {
+  text-decoration: none;
+  color: white;
+  background: #E74C3C;
+  padding: 1rem;
+  margin-right: 0.5rem;
+  border-radius: 3px;
+}
+
+.faculty_info table td a:nth-child(2) span {
+  padding: 0.5rem;
+}
+
+.faculty_info table thead {
+  background: black;
+  color: white;
+}
+
+.addfaculty {
+  width: 100%;
+  padding: 3rem 5rem 3rem 5rem;
+}
+
+.addfaculty .title {
+  width: 100%;
+  line-height: 4.5rem;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  background: rgba(128, 128, 128, 0.7);
+  border: 1px solid rgba(128, 128, 128, 0.7);
+  border-radius: 5px 5px 0 0;
+  -webkit-box-shadow: 0 0 10px rgba(128, 128, 128, 0.7);
+          box-shadow: 0 0 10px rgba(128, 128, 128, 0.7);
+}
+
+.addfaculty form {
+  width: 100%;
+  padding: 2rem 3rem 2rem 3rem;
+  border: 1px solid rgba(128, 128, 128, 0.7);
+  border-radius: 0 0 5px 5px;
+  -webkit-box-shadow: 0 0 10px rgba(128, 128, 128, 0.7);
+          box-shadow: 0 0 10px rgba(128, 128, 128, 0.7);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.addfaculty form .form-control {
+  width: 100%;
+  margin: 1rem;
+}
+
+.addfaculty form .form-control label {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.addfaculty form .form-control input[type="radio"] {
+  margin-left: 3.5rem;
+  cursor: pointer;
+}
+
+.addfaculty form button {
+  width: 50%;
+  height: 4rem;
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: white;
+  background: #145A32;
+  border: 2px solid #145A32;
+  margin: 1.5rem 0;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 0 10px rgba(128, 128, 128, 0.7);
+          box-shadow: 0 0 10px rgba(128, 128, 128, 0.7);
+  cursor: pointer;
+}
+
+.addfaculty form button:hover {
+  background: white;
+  border: 2px solid #145A32;
+  color: #145A32;
+  -webkit-box-shadow: 0 0 10px rgba(128, 128, 128, 0.9);
+          box-shadow: 0 0 10px rgba(128, 128, 128, 0.9);
+}
+
+.book_div {
+  width: auto;
+  margin: 3.5rem 2rem 2rem 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.book_div .book_upload {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.book_div .book_upload .title {
+  width: 80%;
+  line-height: 4rem;
+  background: rgba(128, 128, 128, 0.7);
+  font-size: 1.7rem;
+  font-weight: 600;
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 5px 5px 0 0;
+  -webkit-box-shadow: 0 0 10px rgba(128, 128, 128, 0.4);
+          box-shadow: 0 0 10px rgba(128, 128, 128, 0.4);
+}
+
+.book_div .book_upload form {
+  width: 80%;
+  padding: 2rem;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(128, 128, 128, 0.4);
+  border-radius: 0 0 5px 5px;
+  -webkit-box-shadow: 0 0 10px rgba(128, 128, 128, 0.4);
+          box-shadow: 0 0 10px rgba(128, 128, 128, 0.4);
+}
+
+.book_div .book_upload form input[type='text'] {
+  margin: 1rem 0 1rem 0;
+}
+
+.book_div .book_upload form button {
+  width: 50%;
+  line-height: 4rem;
+  margin: 1rem 2rem 1rem 2rem;
+  border: 1px solid rgba(128, 128, 128, 0.4);
+  border-radius: 2px;
+  background: #283747;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.book_div .book_upload form button:hover {
+  background: #17202A;
+  font-size: 2rem;
+  -webkit-box-shadow: 0 0 10px gray;
+          box-shadow: 0 0 10px gray;
+}
+
+.book_div .book_upload form .select_option {
+  width: 90%;
+  margin: 2rem 2rem 0 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.book_div .book_upload form .select_option label {
+  width: 30%;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 0 5rem 0 2rem;
+}
+
+.book_div .book_upload form .select_option select {
+  width: 70%;
+  height: 3rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 0 5rem 0 2rem;
+  border: 1px solid rgba(128, 128, 128, 0.4);
+  cursor: pointer;
+}
+
+.book_div .book_upload form .select_option select option {
+  font-size: 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.book_div .book_upload form input[type=file] {
+  line-height: 3rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 2rem 0 1.5rem 0;
+  outline: none;
+}
+
+.book_div .book_upload form input[type=file]::-webkit-file-upload-button {
+  width: 15rem;
+  height: 3.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  background: #229954;
+  color: white;
+  border: 1px solid rgba(128, 128, 128, 0.8);
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+}
+
+.book_div .book_upload form input[type=file]::-webkit-file-upload-button:hover {
+  background: #196F3D;
+  font-size: 1.5rem;
+  -webkit-box-shadow: 0 0 10px rgba(128, 128, 128, 0.8);
+          box-shadow: 0 0 10px rgba(128, 128, 128, 0.8);
+}
+
+.books {
+  width: auto;
+  padding: 4rem;
+}
+
+.books .lft {
+  position: relative;
+  float: right;
+  right: 5%;
+  margin-top: 0rem;
+}
+
+.books .lft a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 1.5rem;
+  border: 1px solid rgba(128, 128, 128, 0.8);
+  border-radius: 5px;
+  background: rgba(0, 128, 0, 0.7);
+  color: white;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+.books .lft a span {
+  margin-left: 1rem;
+}
+
+.books .lft a:hover {
+  font-size: 1.6rem;
+  background: white;
+  color: rgba(0, 128, 0, 0.7);
+  border: 2px solid rgba(0, 128, 0, 0.7);
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+.books .book_table {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 6rem;
+}
+
+.books .book_table div.dataTables_wrapper {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.books .book_table .title {
+  width: 100%;
+  line-height: 4rem;
+  background: rgba(128, 128, 128, 0.7);
+  font-size: 1.7rem;
+  font-weight: 600;
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 5px 5px 0 0;
+  -webkit-box-shadow: 0 0 10px rgba(128, 128, 128, 0.4);
+          box-shadow: 0 0 10px rgba(128, 128, 128, 0.4);
+}
+
+.books .book_table table {
+  width: 100%;
+  border-collapse: collapse;
+  -webkit-box-shadow: 0 0 10px rgba(128, 128, 128, 0.4);
+          box-shadow: 0 0 10px rgba(128, 128, 128, 0.4);
+}
+
+.books .book_table table thead {
+  background: black;
+  color: white;
+  border: 1px solid white;
+}
+
+.books .book_table table thead th {
+  line-height: 3rem;
+  font-size: 1.7rem;
+  font-weight: 600;
+  border: 1px solid white;
+}
+
+.books .book_table table td {
+  line-height: 2.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.books .book_table table td a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.books .book_table table td a i {
+  font-size: 2.5rem;
+  color: rgba(255, 0, 0, 0.9);
+  cursor: pointer;
+}
+
+.student_div {
+  padding: 2rem 4rem 2rem 4rem;
+}
+
+.student_div .import_btn button {
+  line-height: 2rem;
+  text-decoration: none;
+  padding: 1rem;
+  background: rgba(0, 128, 0, 0.8);
+  border: 2px solid rgba(0, 128, 0, 0.1);
+  border-radius: 3px;
+  color: white;
+  margin: 2rem 0 0 3rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  outline: none;
+  cursor: pointer;
+}
+
+.student_div .import_btn button span {
+  margin: 1rem;
+}
+
+.student_div .import_btn button:hover {
+  background: white;
+  border: 2px solid rgba(0, 128, 0, 0.8);
+  border-radius: 3px;
+  color: rgba(0, 128, 0, 0.8);
+}
+
+.student_div .import_btn a {
+  text-decoration: none;
+  background: rgba(0, 128, 0, 0.8);
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 1.3rem 1rem 1.3rem 1rem;
+  border-radius: 3px;
+  margin-left: 1rem;
+}
+
+.student_div .model1 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 150;
+}
+
+.student_div .model1 .model_content1 {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: white;
+  width: 30%;
+  border: 1px solid rgba(128, 128, 128, 0.7);
+  -webkit-box-shadow: 0 0 10px rgba(128, 128, 128, 0.7);
+          box-shadow: 0 0 10px rgba(128, 128, 128, 0.7);
+  border-radius: 3px;
+}
+
+.student_div .model1 .model_content1 .title1 {
+  width: 100%;
+  height: 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.8rem;
+  font-weight: 600;
+  padding: 0.5rem 2rem 0.5rem 2rem;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.7);
+}
+
+.student_div .model1 .model_content1 .title1 i {
+  cursor: pointer;
+}
+
+.student_div .model1 .model_content1 form .file {
+  height: 8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.7);
+}
+
+.student_div .model1 .model_content1 form .file input[type=file] {
+  width: 55%;
+  line-height: 3rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 2rem 0 1.5rem 0;
+  outline: none;
+}
+
+.student_div .model1 .model_content1 form .file input[type=file]::-webkit-file-upload-button {
+  width: 10rem;
+  height: 3rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  background: #229954;
+  color: white;
+  border: 1px solid rgba(128, 128, 128, 0.8);
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+}
+
+.student_div .model1 .model_content1 form .file input[type=file]::-webkit-file-upload-button:hover {
+  background: #196F3D;
+  font-size: 1.5rem;
+  -webkit-box-shadow: 0 0 10px rgba(128, 128, 128, 0.8);
+          box-shadow: 0 0 10px rgba(128, 128, 128, 0.8);
+}
+
+.student_div .model1 .model_content1 form .group {
+  float: right;
+  line-height: 4rem;
+  padding: 0.5rem 1rem 0.5rem 0;
+}
+
+.student_div .model1 .model_content1 form .group button {
+  width: 10rem;
+  line-height: 3rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  background: rgba(0, 128, 0, 0.7);
+  color: white;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.student_div .model1 .model_content1 form .group button:hover {
+  background: green;
+  -webkit-box-shadow: 0 0 10px rgba(128, 128, 128, 0.7);
+          box-shadow: 0 0 10px rgba(128, 128, 128, 0.7);
+}
+
+.student_div .model1 .model_content1 form .group label {
+  background: #5F6A6A;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 0.6rem 2.5rem 0.6rem 2.5rem;
+  margin: 0 1rem;
+  cursor: pointer;
+}
+
+.student_div .model1 .model_content1 form .group label:hover {
+  background: #4D5656;
+  -webkit-box-shadow: 0 0 10px rgba(128, 128, 128, 0.7);
+          box-shadow: 0 0 10px rgba(128, 128, 128, 0.7);
+}
+
+.student_div .title {
+  width: 100%;
+  line-height: 4rem;
+  margin-top: 3rem;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  background: rgba(128, 128, 128, 0.7);
+  color: white;
+  border: 1px solid rgba(0, 128, 0, 0.8);
+  border-radius: 5px 5px 0 0;
+  -webkit-box-shadow: 0 0 10px rgba(128, 128, 128, 0.7);
+          box-shadow: 0 0 10px rgba(128, 128, 128, 0.7);
+}
+
+.student_div table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.student_div table thead {
+  background: black;
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.student_div table td {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding: 0.5rem;
+}
+
+.student_div table td a {
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: rgba(255, 0, 0, 0.8);
+}
+
+.notification_div {
+  padding: 4rem 4rem 2rem 4rem;
+}
+
+.notification_div .title {
+  width: 100%;
+  line-height: 4rem;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  background: rgba(128, 128, 128, 0.5);
+  border: 1px solid rgba(128, 128, 128, 0.8);
+  border-radius: 5px 5px 0 0;
+  -webkit-box-shadow: 0 0 10px rgba(128, 128, 128, 0.7);
+          box-shadow: 0 0 10px rgba(128, 128, 128, 0.7);
+}
+
+.notification_div table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.notification_div table thead {
+  line-height: 3rem;
+  background: black;
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.notification_div table td {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding: 0.5rem;
+}
+
+.notification_div table td .model {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.3);
+  display: none;
+}
+
+.notification_div table td .model .model_content {
+  margin: 0 10rem 0 10rem;
+  padding-bottom: 1rem;
+  background: white;
+}
+
+.notification_div table td .model .model_content .notification_title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 3rem;
+  padding: 0 2rem;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.5);
+}
+
+.notification_div table td .model .model_content .notification_title i {
+  cursor: pointer;
+}
+
+.notification_div table td .model .model_content .group {
+  padding: 0.5rem 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.notification_div table td .model .model_content .group span {
+  font-weight: 600;
+  padding-right: 1rem;
+}
+
+.notification_div table td .model .model_content .group span::first-letter {
+  text-transform: uppercase;
+}
+
+.notification_div table td .model .model_content .group p::first-letter {
+  text-transform: uppercase;
+}
+/*# sourceMappingURL=admin.css.map */

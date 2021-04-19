@@ -1,0 +1,49 @@
+{% extends 'student/studenttemplate.html' %}
+
+{% block title %} Student Home {%endblock%}
+
+{% block tags %}
+<script src=" {{url_for('static', filename = 'js/studenthome.js')}} "></script>
+{%endblock%}
+
+{% block content %}
+
+<div class="main_content">
+    <div class="location">
+        <i class="fas fa-user-graduate"></i><span>Students Home</span>
+    </div>
+
+    <div class="notification">
+        <div class="title">
+            Notiification
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for field in data %}
+                <tr>
+                    <td>
+                        <span id="{{field[0]}}" onclick="show_model(this.id)"> {{ field[1] }} </span>
+
+                        <div class="show_note" id='model{{field[0]}}'>
+                            <div class="show_content">
+                                <div class="des_title">
+                                    <span>Description</span><i class="fas fa-times" id='close_{{field[0]}}' onclick="closeEvent(this.id)"></i>
+                                </div>
+                                <div class="show_main_content">
+                                    {{field[2]}}
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{%endblock%}

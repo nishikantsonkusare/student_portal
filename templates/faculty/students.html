@@ -1,0 +1,79 @@
+{% extends 'faculty/facultytemplate.html' %}
+
+{% block title %}Students{%endblock%}
+
+{% block tags %} 
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+<script src=" {{ url_for('static', filename = '/js/student.js')  }} "></script>
+{%endblock%}
+
+{% block content %}
+<div class="main_content">
+    <div class="location">
+        <i class="fas fa-user-graduate"></i><span>Students</span>
+    </div>
+
+    <div class="student_div">
+        <div class="import_btn">
+            <!-- <label for="import_file" ><i class="fas fa-upload"></i><span>Import Students</span></label> -->
+            <button id="mybtn">Import Students</button> <a href="/download">Download Sample File</a>
+        </div>
+
+<!-- This is code for Pop-Up Model -->
+        <div class="model1" id='model'>
+            <div class="model_content1">
+                <div class="title1">
+                    <span>Upload File</span><i class="fas fa-times" id='close'></i>
+                </div>
+                <form action="/uploadstudent" method="post" enctype="multipart/form-data">
+                    <div class="file">
+                        <input type="file" name="file" id="file">
+                    </div>
+                    <div class="group">
+                        <button type="submit">Upload</button>
+                        <label id="close1">Close</label>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="title">
+            Student List
+        </div>
+
+        <table id="student" class="cell-border">
+            <thead>
+                <tr>
+                    <th>Sr. No.</th>
+                    <th>Student Name</th>
+                    <th>Mobile No.</th>
+                    <th>Roll No.</th>
+                    <th>Branch</th>
+                    <th>Year</th>
+                    <th>Section</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for field in data %}
+                <tr>
+                    <td>{{loop.index}}</td>
+                    <td>{{field[1]}}</td>
+                    <td>{{field[2]}}</td>
+                    <td>{{field[3]}}</td>
+                    <td>{{field[4]}}</td>
+                    <td>{{field[5]}}</td>
+                    <td>{{field[6]}}</td>
+                    <td><a href="/removeStudent/{{field[0]}}"><i class="fas fa-trash-alt"></i></a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+
+    </div>
+
+{%endblock%}

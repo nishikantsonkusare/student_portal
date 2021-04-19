@@ -1,0 +1,84 @@
+{% extends '/faculty/facultytemplate.html' %}
+
+{% block title %} Books {% endblock %}
+
+{% block tags %} 
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+{%endblock%}
+
+{% block content %}
+
+<div class="main_content">
+    <div class="location">
+        <i class="fas fa-book"></i><span>Books</span>
+    </div>
+
+    <div class="books">
+        {% with message = get_flashed_messages() %}
+        {% if message %}
+            {% for msg in message %}
+                <div class="alert">
+                    <div class="group">
+                        <p>
+                            {{msg}}
+                        </p>
+                        <i class="fas fa-times" onclick="this.parentNode.parentNode.remove()"></i>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    
+        <div class="lft">
+            <a href="/addbook"><i class="fas fa-upload"></i><span>Upload New Book</span></a>
+        </div>
+        <div class="book_table">
+            <div class="title">
+                Books List
+            </div>
+            <table id="bookstable" class="display row-border" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Sr. No.</th>
+                        <th>Book Name</th>
+                        <th>Branch</th>
+                        <th>Year</th>
+                        <th>Open Book</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                {% for field in data %}
+                <tbody>
+                    <tr>
+                        <td>{{loop.index}}</td>
+                        <td>{{field[1]}}</td>
+                        <td>{{field[2]}}</td>
+                        <td>{{field[3]}}</td>
+                        <td> <a href="/show/pdf/{{field[4]}}" target="_blank"><i class="fas fa-file-pdf"></i></a></td>
+                        <td><a href="/removebook/{{field[0]}}"><i class="fas fa-trash-restore"></i></a></td>
+                    </tr>
+                </tbody>
+                {%endfor%}
+            </table>
+    
+        </div>
+    </div>
+    
+    <script>
+    
+    jQuery(function ($) {
+        $(document).ready( function () {
+            $('#bookstable').DataTable({
+                "dom": '<"top">t<"bottom"ip><"clear">',
+                "ordering": false,
+            });
+        });
+    });
+        
+    </script>
+
+</div>  
+
+{% endblock %}

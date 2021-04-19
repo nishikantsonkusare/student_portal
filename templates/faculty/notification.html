@@ -1,0 +1,66 @@
+{% extends 'faculty/facultytemplate.html' %}
+
+{% block title %}Notification{%endblock%}
+
+{% block tags %} 
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+<script src=" {{ url_for('static', filename = '/js/notification.js')  }} "></script>
+{%endblock%}
+
+{% block content %}
+
+<div class="main_content">
+    <div class="location">
+        <i class="fas fa-bell"></i><span>Notification</span>
+    </div>
+
+    <div class="notification_div">
+        <div class="title">
+            Notification
+        </div>
+        <table id="notification" class="cell-border">
+            <thead>
+                <tr>
+                    <th>Sr. No.</th>
+                    <th>Title</th>
+                    <th>Branch</th>
+                    <th>Year</th>
+                    <th>Section</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for field in data %}
+                <tr>
+                    <td>{{loop.index}}</td>
+                    <td><a style="cursor: pointer;" id='{{field[0]}}' onclick='clickEvent(this.id)'>{{field[1]}}</a>
+                    <div class="model" id='model{{field[0]}}'>
+                        <div class="model_content">
+                            <div class="notification_title">
+                                <span>Notification</span><i class="fas fa-times" id='close_{{field[0]}}' onclick="closeEvent(this.id)"></i>
+                            </div>
+                            <div class="group">
+                                <span>Title: </span><p>{{field[1]}}</p>
+                            </div>
+                            <div class="group">
+                                <span>Description: </span><p>{{field[2]}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    </td>
+                    <td>{{field[3]}}</td>
+                    <td>{{field[4]}}</td>
+                    <td>{{field[5]}}</td>
+                    <td><a href="/remove_notification/{{field[0]}}" style="color: red"><i class="fas fa-trash-alt"></i></a></td>
+                </tr>
+                {%endfor%}
+            </tbody>
+        </table>
+
+    </div>
+    
+
+{%endblock%}
